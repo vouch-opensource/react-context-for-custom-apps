@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 
 import {
   Image,
@@ -9,12 +10,14 @@ import Button from '../reactThemeTechnicalBlog/button/button.js';
 
 const App = () => {
 
+  const Logo = require('../reactThemeTechnicalBlog/assets/vouch_logo.png');
+
   return (
     <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
       <Text style={{fontSize: 20}}>Welcome to Digital Key</Text>
       <Image 
       style={{margin: 50}}
-        source={require('../reactThemeTechnicalBlog/assets/vouch_logo.png')}/>
+        source={Logo}/>
         <Button title="View Vehicle"/>
         <Button title="Start Vehicle"/>
     </View>
