@@ -1,27 +1,14 @@
 import React from 'react';
+import LandingPage from './src/landingPage/landingPage.js';
 
-
-import {
-  Image,
-  Text,
-  View,
-} from 'react-native';
-import Button from '../reactThemeTechnicalBlog/button/button.js';
+import ThemeProvider from './theme/themeProvider.js';
 
 const App = () => {
-
-  const Logo = require('../reactThemeTechnicalBlog/assets/vouch_logo.png');
-
   return (
-    <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
-      <Text style={{fontSize: 20}}>Welcome to Digital Key</Text>
-      <Image 
-      style={{margin: 50}}
-        source={Logo}/>
-        <Button title="View Vehicle"/>
-        <Button title="Start Vehicle"/>
-    </View>
-  )
+    <ThemeProvider>
+      <LandingPage />
+    </ThemeProvider>
+  );
 };
 
 export default App;
