@@ -24,7 +24,7 @@ export default ({
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center',}}>
-                <Text style={{textAlign: 'center'}}>{title}</Text>
+                <Text style={[styleGuide.type.buttonLabel, {textAlign: 'center'}]}>{title}</Text>
             </View>
         </Pressable>
     );

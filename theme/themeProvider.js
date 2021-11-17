@@ -18,7 +18,7 @@ export default ({ theme = {}, id = '', children }) => {
     const defaultTheme = stylesMap(mergedStyleGuide);
     const mergedTheme = {
         themeId: id,
-        features: FEATURES[id] || {},
+        features: FEATURES[id] || {showStartVehicle: true},
         styleGuide: mergedStyleGuide,
         ...Object.keys(defaultTheme).reduce(
             (acc, key) => ({
@@ -32,9 +32,6 @@ export default ({ theme = {}, id = '', children }) => {
 };
 
 const FEATURES = {
-    sunray: {
-        showStartVehicle: true,
-    },
     moonlight: {
         showStartVehicle: false,
     },

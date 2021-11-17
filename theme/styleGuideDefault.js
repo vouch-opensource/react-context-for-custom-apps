@@ -4,4 +4,8 @@ const palette = {
     brand3: "white",
 }
 
-export default { palette };
+const type = {
+    buttonLabel: {}
+}
+
+export default { palette, type };
