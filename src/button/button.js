@@ -6,20 +6,12 @@ export default ({
     title,
     onPress,
 }) => {
-    const { buttonComponent: styles, styleGuide } = useContext(ThemeContext);
+    const { buttonComponent: styles, styleGuide, themeId } = useContext(ThemeContext);
+    let containerStyle = themeId === '' ? {backgroundColor: 'white'} : null;
     return (
         <Pressable
             onPress={() => onPress && onPress()}
-            style={{      
-        height: 54,
-        paddingHorizontal: 20,
-        margin: 10,
-        borderColor: styleGuide.palette.brand1,
-        borderWidth: 3,
-        backgroundColor: styleGuide.palette.brand2,
-        justifyContent: 'center',
-    }}
-        >
+            style={[styles.container, containerStyle]}>
             <View style={{ 
                     flexDirection: 'row',
                     alignItems: 'center',
