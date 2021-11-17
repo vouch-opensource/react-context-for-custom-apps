@@ -7,15 +7,15 @@ export default ({
     onPress,
 }) => {
     const { buttonComponent: styles, styleGuide, themeId } = useContext(ThemeContext);
-    let containerStyle = themeId === '' ? {backgroundColor: 'white'} : null;
     return (
         <Pressable
             onPress={() => onPress && onPress()}
-            style={[styles.container, containerStyle]}>
+            style={[styles.container, styleGuide.type.button]}>
             <View style={{ 
                     flexDirection: 'row',
                     alignItems: 'center',
-                    justifyContent: 'center',}}>
+                    justifyContent: 'center',
+                    }}>
                 <Text style={[styleGuide.type.buttonLabel, {textAlign: 'center'}]}>{title}</Text>
             </View>
         </Pressable>

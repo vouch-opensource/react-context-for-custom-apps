@@ -1,18 +1,18 @@
 import React from 'react';
 import ThemeContext from './themeContext.js';
 import stylesMap from './stylesMap.js';
-import styleGuideSunray from './styleGuideSunray.js';
-import styleGuideMoonlight from './styleGuideMoonlight.js';
+import styleGuideA from './styleGuideA.js';
+import styleGuideB from './styleGuideB.js';
 import styleGuideDefault from './styleGuideDefault.js';
 
-//Two companies: Sunray and Moonlight
+//Two companies: A and B
 
 export default ({ theme = {}, id = '', children }) => {
     let themeStyleGuide = styleGuideDefault;
-    if (id === 'sunray') {
-        themeStyleGuide = styleGuideSunray;
-    } else if (id === 'moonlight') {
-        themeStyleGuide = styleGuideMoonlight;
+    if (id === 'A') {
+        themeStyleGuide = styleGuideA;
+    } else if (id === 'B') {
+        themeStyleGuide = styleGuideB;
     }
     const mergedStyleGuide = Object.assign({}, themeStyleGuide, theme.styleGuide);
     const defaultTheme = stylesMap(mergedStyleGuide);
@@ -32,7 +32,7 @@ export default ({ theme = {}, id = '', children }) => {
 };
 
 const FEATURES = {
-    moonlight: {
+    B: {
         showStartVehicle: false,
     },
 };
