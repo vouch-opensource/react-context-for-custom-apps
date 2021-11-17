@@ -5,7 +5,7 @@ const palette = {
 }
 
 const type = {
-    buttonLabel: {}
+    
 }
 
 export default { palette, type };
