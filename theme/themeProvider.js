@@ -7,26 +7,19 @@ import styleGuideDefault from './styleGuideDefault.js';
 
 //Two companies: A and B
 
-export default ({ theme = {}, id = '', children }) => {
+export default ({ id = '', children }) => {
     let themeStyleGuide = styleGuideDefault;
     if (id === 'A') {
         themeStyleGuide = styleGuideA;
     } else if (id === 'B') {
         themeStyleGuide = styleGuideB;
     }
-    const mergedStyleGuide = Object.assign({}, themeStyleGuide, theme.styleGuide);
-    const defaultTheme = stylesMap(mergedStyleGuide);
+    const defaultTheme = stylesMap(themeStyleGuide);
     const mergedTheme = {
         themeId: id,
         features: FEATURES[id] || {showStartVehicle: true},
-        styleGuide: mergedStyleGuide,
-        ...Object.keys(defaultTheme).reduce(
-            (acc, key) => ({
-                ...acc,
-                [key]: Object.assign({}, defaultTheme[key], theme[key]),
-            }),
-            {}
-        ),
+        styleGuide: themeStyleGuide,
+        ...defaultTheme,
     };
     return <ThemeContext.Provider value={mergedTheme}>{children}</ThemeContext.Provider>;
 };

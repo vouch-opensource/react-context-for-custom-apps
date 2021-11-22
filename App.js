@@ -5,7 +5,7 @@ import ThemeProvider from './theme/themeProvider.js';
 
 const App = () => {
   return (
-    <ThemeProvider id='A'>
+    <ThemeProvider id=''>
       <LandingPage />
     </ThemeProvider>
   );
