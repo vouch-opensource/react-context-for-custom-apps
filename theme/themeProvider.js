@@ -1,6 +1,5 @@
 import React from 'react';
 import ThemeContext from './themeContext.js';
-import stylesMap from './stylesMap.js';
 import styleGuideA from './styleGuideA.js';
 import styleGuideB from './styleGuideB.js';
 import styleGuideDefault from './styleGuideDefault.js';
@@ -14,12 +13,11 @@ export default ({ id = '', children }) => {
     } else if (id === 'B') {
         themeStyleGuide = styleGuideB;
     }
-    const defaultTheme = stylesMap(themeStyleGuide);
+    
     const mergedTheme = {
         themeId: id,
         features: FEATURES[id] || {showStartVehicle: true},
         styleGuide: themeStyleGuide,
-        ...defaultTheme,
     };
     return <ThemeContext.Provider value={mergedTheme}>{children}</ThemeContext.Provider>;
 };

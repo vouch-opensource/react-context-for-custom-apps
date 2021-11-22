@@ -10,7 +10,13 @@ export default ({
     return (
         <Pressable
             onPress={() => onPress && onPress()}
-            style={[styles.container, styleGuide.type.button]}>
+            style={[{      
+                height: 54,
+                paddingHorizontal: 20,
+                margin: 10,
+                borderWidth: 3,
+                justifyContent: 'center',
+            }, styleGuide.type.button]}>
             <View style={{ 
                     flexDirection: 'row',
                     alignItems: 'center',
