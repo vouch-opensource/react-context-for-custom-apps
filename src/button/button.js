@@ -6,7 +6,7 @@ export default ({
     title,
     onPress,
 }) => {
-    const { buttonComponent: styles, styleGuide, themeId } = useContext(ThemeContext);
+    const { styleGuide } = useContext(ThemeContext);
     return (
         <Pressable
             onPress={() => onPress && onPress()}
